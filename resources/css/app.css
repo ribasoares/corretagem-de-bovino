@@ -1,0 +1,53 @@
+@import url('~bootstrap/css/bootstrap.min.css');
+
+  
+
+h3{ 
+    color:rgb(5, 5, 5); 
+    text-align: center; 
+} 
+
+
+
+.msg {
+
+    color: whitesmoke;
+    width: 16%;
+    background-color: darkgreen;
+    margin: 5px auto;
+
+}
+
+
+.msg-red {
+
+    color: whitesmoke;
+    width: 25%;
+    text-align: center;
+    background-color: red;
+    margin: 10px auto;
+    animation-duration: 2s;
+
+
+}
+
+.myBackground {
+    background-image: url(https://blogs.canalrural.com.br/canalruralmatogrosso/wp-content/uploads/sites/55/2020/03/boi.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    z-index: 999;
+    background-position-y: 70px;      
+    background-size: cover;
+    
+    
+  }
+
+  .row-login {
+
+    height: 90vh;
+
+  }
+
+
+
+ 
