@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Compra extends Model
 {
     use HasFactory;
@@ -42,8 +43,9 @@ class Compra extends Model
     }
 
     public function atualizar_compras()
-    {
-        return $this->hasMany(AtualizarCompra::class);
+    {   
+        // DEIXA AS ATUALIZAÇÕES ORDENADAS PELAS DATAS
+        return $this->hasMany(AtualizarCompra::class)->orderBy('atualizar_compra_data', 'asc');
     }
 
 

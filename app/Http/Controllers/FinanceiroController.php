@@ -25,14 +25,33 @@ class FinanceiroController extends Controller
      */
     public function allPagar()
     {   
-        $pagarContas = $this->financeiroRepo->allPagarConta();
+        $pagarContas = $this->financeiroRepo->allComprasPagar();
 
         return view('financeiro.pagar_conta', compact('pagarContas'));
     }
 
+    public function allPagas()
+    {   
+        $pagarContas = $this->financeiroRepo->allComprasPagas();
+
+        return view('financeiro.contas-pagas', compact('pagarContas'));
+    }
+
+
+    public function allRecebidas()
+    {   
+        
+        $receberContas = $this->financeiroRepo->allVendasRecebidas();
+        
+        return view('financeiro.contas-recebidas', compact('receberContas'));
+        
+        
+
+    }   
+
     public function allReceber()
     {   
-        $receberContas = $this->financeiroRepo->allReceberConta();
+        $receberContas = $this->financeiroRepo->allVendasReceber();
 
         return view('financeiro.receber-conta', compact('receberContas'));
     }

@@ -11,6 +11,7 @@ use App\Contracts\VendaRepoInterface;
 use App\Contracts\ClienteRepoInterface;
 use App\Contracts\FornecedorRepoInterface;
 use App\Contracts\CompraRepoInterface;
+use App\Contracts\FinanceiroRepoInterface;
 
 
 use Auth;
@@ -23,30 +24,36 @@ class LoginController extends Controller
     private $clienteRepo;
     private $compraRepo;
     private $fornecedorRepo;
+    private $financeiroRepo;
 
     public function __construct(VendaRepoInterface $vendaRepo, ClienteRepoInterface $clienteRepo, 
-    FornecedorRepoInterface $fornecedorRepo, CompraRepoInterface $compraRepo, ) 
+    FornecedorRepoInterface $fornecedorRepo, CompraRepoInterface $compraRepo, FinanceiroRepoInterface $financeiroRepo) 
     {
         $this->vendaRepo = $vendaRepo;
         $this->clienteRepo = $clienteRepo;
         $this->compraRepo = $compraRepo;
         $this->fornecedorRepo = $fornecedorRepo;
+        $this->financeiroRepo = $financeiroRepo;
 
     }
 
     public function form() {
 
-        $vendas = $this->vendaRepo->allVenda();
+        $vendas = $this->vendaRepo->allVendaHome();
         $compras = $this->compraRepo->allCompra();
-        $clientes = $this->clienteRepo->allCliente();
+        $clientes = $this->clienteRepo->allClienteHome();
         $fornecedores = $this->fornecedorRepo->allFornecedor();
+        $pagarContas = $this->financeiroRepo->allComprasPagar();
+        $receberContas = $this->financeiroRepo->allVendasReceber();
+
         $pagamentos = Pagamento::all();
         $recebimentos = Recebimento::all();
         
       
         if(Auth::user()) {
 
-            return view('home', compact('vendas', 'compras', 'clientes', 'fornecedores', 'pagamentos', 'recebimentos'));
+            return view('home', compact('vendas', 'compras', 'clientes', 'fornecedores',
+             'pagamentos', 'recebimentos', 'pagarContas', 'receberContas'));
         }
         
         return view('login');

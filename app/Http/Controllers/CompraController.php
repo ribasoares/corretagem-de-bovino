@@ -24,11 +24,18 @@ class CompraController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function all()
+    public function comprasCompletas()
     {
-        $compras = $this->compraRepo->allCompra();
+        $compras = $this->compraRepo->ComprasCompletas();
 
-        return view('compra.all-compra', compact('compras'));
+        return view('compra.compras-completas', compact('compras'));
+    }
+
+    public function comprasIncompletas()
+    {
+        $compras = $this->compraRepo->ComprasIncompletas();
+
+        return view('compra.compras-incompletas', compact('compras'));
     }
 
     /**

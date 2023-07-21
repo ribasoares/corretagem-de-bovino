@@ -107,7 +107,7 @@
     <div class="col-md-8 offset-md-2 mt-3 p-1 opacity-75 rounded-4">
         
       <div class="table-responsive bg-light border border-dark rounded-4 ">
-        <h4 class="text-center p-2">VALORES PAGOS</h4>
+        <h4 class="text-center p-2">PESO DO GADO</h4>
         <table class="table table-danger text-center table-striped">
           <thead>
             <tr>

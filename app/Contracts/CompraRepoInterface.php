@@ -4,8 +4,9 @@ namespace App\Contracts;
 
 interface CompraRepoInterface 
 {
-   
     public function allCompra();
+    public function ComprasCompletas();
+    public function ComprasIncompletas();
     public function allEstoque();
     public function createCompra($request);
     public function findCompra($id);

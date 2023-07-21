@@ -51,7 +51,8 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li><a href="{{route('cliente.all')}}" class="dropdown-item">Clientes</a></li>
-                    <li><a href="{{route('compra.all')}}" class="dropdown-item">Compras</a></li>
+                    <li><a href="{{route('compra.Completas')}}" class="dropdown-item">Compras Completas</a></li>
+                    <li><a href="{{route('compra.Incompletas')}}" class="dropdown-item">Compras Incompletas</a></li>
                     <li><a href="{{route('fornecedor.all')}}" class="dropdown-item">Fornecedores</a></li>
                     <li><a href="{{route('financeiro.allLucro')}}" class="dropdown-item">Lucros</a></li>  
                     <li><a href="{{route('venda.all')}}" class="dropdown-item">Vendas</a></li> 
@@ -65,10 +66,12 @@
                   <a href="#" class="nav-link dropdown-toggle"
                     data-bs-toggle="dropdown">Financeiro
                   </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a href="{{route('vendedor.allLucroTotal')}}" class="dropdown-item">Lucros Totais</a></li> 
-                    <li><a href="{{route('financeiro.allPagar')}}" class="dropdown-item">Pagar</a></li> 
-                    <li><a href="{{route('financeiro.allReceber')}}" class="dropdown-item">Receber</a></li>                                                          
+                  <ul class="dropdown-menu dropdown-menu-end">                   
+                    <li><a href="{{route('financeiro.allPagar')}}" class="dropdown-item">Compras a Pagar</a></li> 
+                     <li><a href="{{route('financeiro.ContasPagas')}}" class="dropdown-item">Compras Pagas</a></li> 
+                     <li><a href="{{route('financeiro.allReceber')}}" class="dropdown-item">Vendas a Receber</a></li>                                        
+                    <li><a href="{{route('financeiro.ContasRecebidas')}}" class="dropdown-item">Vendas Recebidas</a></li>   
+                    <li><a href="{{route('vendedor.allLucroTotal')}}" class="dropdown-item">Lucros Totais</a></li>                                                         
                   </ul>
                 </div>
 

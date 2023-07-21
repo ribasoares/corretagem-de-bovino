@@ -12,7 +12,7 @@ class Estoque extends Model
     protected $fillable = [
 
         'quant_disponivel',
-        'fornecedor_nome',
+       // 'fornecedor_nome',
 
         'compra_id'
 

@@ -13,7 +13,7 @@
     <div class="col-md-6 py-1 mt-3 bg-light border border-dark opacity-75 rounded-4">
 
       <div class="text-center py-2">
-        <h4>PAGAR CONTA</h4>
+        <h4>PAGAR COMPRA</h4>
       </div>
   
       <form class="form-horizontal" action="/Pagar-Conta/update/{{$pagarConta->id}}" method="post"  enctype="multipart/form-data">

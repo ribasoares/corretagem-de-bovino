@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('vendas', function (Blueprint $table) {
             $table->id();
+            // float porque poder vender uma banda
             $table->float('venda_quantidade');
             $table->float('venda_peso', 10, 2);
             $table->float('venda_valor_kg'); 

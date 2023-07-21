@@ -1,12 +1,13 @@
 @extends('layout.master')
 
-@section('title', 'Contas a Pagar')
+@section('title', 'Contas Pagas')
 
 @section('content')
 
-    <div class="container border border-dark col-md-9 mt-5 bg-light opacity-75 rounded-4">       
+
+     <div class="container border border-dark col-md-9 mt-5 bg-light opacity-75 rounded-4">       
         <div class="text-center mt-2">
-        <h4 >CONTAS A PAGAR</h4>
+        <h4 >CONTAS PAGAS</h4>
         </div>
 
         <div class="table-responsive">
@@ -19,7 +20,6 @@
                     <th scope="col">Valor Pagar</th>
                     <th scope="col">Valor em Aberto</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Data da Compra</th>
                     <th scope="col">Ação</th>
                 </tr>
                 </thead>
@@ -27,13 +27,12 @@
                 <tbody>
                     @foreach($pagarContas as $pagarConta)
                         <tr> 
-                            @if($pagarConta->status == 1)                      
+                            @if($pagarConta->status == 0)                      
                                 <td>{{$pagarConta->id}}</td>
                                 <td>{{$pagarConta->compra->fornecedor->fornecedor_nome}}</td>                                 
                                 <td>{{ 'R$ '. number_format( $pagarConta->valor_pagar, 2, ",", ".") }}</td>
                                 <td>{{ 'R$ '. number_format( $pagarConta->valor_aberto, 2, ",", ".") }}</td>
-                                <td>{{$pagarConta->status == 1 ? 'Devendo' : 'Pago' }} </td>
-                                <td>{{ date_format($pagarConta->pagar_conta_data, 'd/m/Y') }}</td>               
+                                <td>{{$pagarConta->status == 1 ? 'Devendo' : 'Pago' }} </td>             
                                 <td><a class="btn btn-success" href="/Pagar-Conta/edit/{{ $pagarConta->id}}">Pagamento</a> </td>
                             @endif   
                         </tr>
@@ -48,7 +47,8 @@
      <div class="container col-md-1 mt-2 opacity-75 rounded-4">
         {{ $pagarContas->links('pagination::bootstrap-4') }}
         
-    </div>    
+    </div>
+    
   
     
 @endsection

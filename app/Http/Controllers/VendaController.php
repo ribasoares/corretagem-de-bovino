@@ -38,6 +38,7 @@ class VendaController extends Controller
         return view('venda.all-venda', compact('vendas'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
