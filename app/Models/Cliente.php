@@ -19,7 +19,7 @@ class Cliente extends Model
 
     public function dado_cliente()
     {
-        return $this->hasOne(DadoCliente::class);
+        return $this->hasOne(DadoCliente::class, 'cliente_id');
     }
 
       public function venda()

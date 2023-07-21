@@ -14,12 +14,13 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Fornecedor</th>                
-                    <th scope="col">Quantidade</th>
-                    <th scope="col">Peso Total (Liquido)</th>
+                    <th scope="col">Cliente</th>                
+                    <th scope="col">Quant.</th>
+                    <th scope="col">Peso Total</th>
                     <th scope="col">Valor por KG</th>
                     <th scope="col">Valor a Pagar</th>
-                    <th scope="col">Data da venda</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Fornecedor</th>
                     <th scope="col">Ação</th>
                 </tr>
                 </thead>
@@ -33,9 +34,8 @@
                     <td>{{ number_format( $venda->venda_peso, 2, ".") .' kg'}}</td> 
                     <td>{{ 'R$ '. number_format( $venda->venda_valor_kg, 2, ",", ".") }}</td> 
                     <td>{{ 'R$ '. number_format( $venda->valor_receber, 2, ",", ".") }}</td>             
-                    <td>{{ date_format($venda->venda_data, 'd-m-Y') }}</td>
-                    
-                    <td><a class="btn btn-dark" href="/venda/edit/{{ $venda->id}}">Pagamento</a> </td>
+                    <td>{{ date_format($venda->venda_data, 'd/m/Y') }}</td>
+                    <td>{{$venda->estoque->compra->fornecedor->fornecedor_nome}}</td> 
                     <td><a class="btn btn-danger" href='/venda/del/{{$venda->id}} 'onclick="return confirm('Realmente deseja Excluir?')">Deletar</a></td> 
                 </tr>
                 @endforeach                     
@@ -44,7 +44,10 @@
 
         </div>
     </div>
-    
-  
-    
+
+    <div class="container col-md-2 mt-2 opacity-75 rounded-4">
+        {{ $vendas->links('pagination::bootstrap-4') }}
+          
+    </div>
+
 @endsection

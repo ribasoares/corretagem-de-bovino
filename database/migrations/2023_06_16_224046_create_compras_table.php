@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('compras', function (Blueprint $table) {
             $table->id();
+            // integer porque só compra inteiro
             $table->integer('compra_quantidade');
+            // alterei 'compra_estoque" para "float" para poder vender uma banda
             $table->integer('compra_estoque')->nullable();
             $table->float('compra_pesoTotal', 10, 2)->nullable();
             $table->float('compra_valor_kg'); 

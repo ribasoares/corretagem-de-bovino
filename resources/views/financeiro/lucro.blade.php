@@ -52,6 +52,12 @@
         </div>
      </div>
 
+     <div class="container col-md-1 mt-2 opacity-75 rounded-4">
+        {{ $lucros->links('pagination::bootstrap-4') }}
+        
+    </div>
+
+
      <div class="container border border-dark col-md-9 mt-5 bg-light opacity-75 rounded-4">       
         <div class=" text-center mt-2">
         <h4 >LUCROS PAGOS</h4>

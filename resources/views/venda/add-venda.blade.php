@@ -43,28 +43,28 @@
       <div class="form-group">
         <div class="col-md-8 offset-md-2 py-1">
             <label> QUANTIDADE DE GADO:</label>
-          <input class="form-control col-md-8 border border-dark" type="text" id="venda_quantidade" name="venda_quantidade"  placeholder="ex: 8" required>
+          <input class="form-control col-md-8 border border-dark" type="text" maxlength="3" id="venda_quantidade" name="venda_quantidade"  placeholder="ex: 8" required>
         </div>
       </div>   
         
       <div class="form-group">
         <div class="col-md-8 offset-md-2 py-1">
             <label> PESO TOTAL (Liquido):</label>
-          <input class="form-control col-md-8 border border-dark" type="text" id="venda_peso" name="venda_peso"  placeholder="ex: 3500" required>
+          <input class="form-control col-md-8 border border-dark" type="text" minlength="2" maxlength="3"id="venda_peso" name="venda_peso"  placeholder="ex: 3500" required>
         </div>
       </div>        
         
       <div class="form-group">
         <div class="col-md-8 offset-md-2 py-1">
             <label>PREÇO DO KG:</label>
-          <input class="form-control border border-dark" type="text" id="venda_valor_kg"  name="venda_valor_kg"  placeholder="18.50" required>
+          <input class="form-control border border-dark" type="text" id="venda_valor_kg" maxlength="5" name="venda_valor_kg"  placeholder="18.50" required>
         </div>
       </div>  
 
       <div class="form-group">
         <div class="col-md-8 offset-md-2 py-1">
             <label>DATA:</label>
-          <input class="form-control col-md-8 border border-dark" type="date" name="venda_data"  placeholder="17.50" required>
+          <input class="form-control col-md-8 border border-dark" type="date" name="venda_data"  required>
         </div>
       </div> 
 

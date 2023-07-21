@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('estoques', function (Blueprint $table) {
             $table->id();
+            // float porque poder vender uma banda
             $table->float('quant_disponivel', 10, 2);
 
             // OBS: coluna removida

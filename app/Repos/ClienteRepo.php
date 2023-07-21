@@ -20,9 +20,24 @@ class ClienteRepo implements ClienteRepoInterface
     }
 
 
-    public function allCliente()
+    public function allClienteHome()
     {
         return $this->model->all();
+
+    }
+
+    public function allCliente()
+    {
+        return $this->model->orderBy('cliente_nome', 'asc')->paginate(5);
+
+       // ORDENAÇÃO PELO RELACIONAMENTO
+
+        /*
+            return $this->model->join('dados_clientes', 'clientes.id', '=', 'cliente_id')
+        ->orderBy('cliente_cpf', 'asc')
+        ->get();
+
+        */
     }
 
 

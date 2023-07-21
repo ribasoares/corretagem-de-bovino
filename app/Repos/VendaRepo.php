@@ -33,10 +33,14 @@ class VendaRepo implements VendaRepoInterface
        
     }
 
+    public function allVendaHome()
+    {
+        return $this->model->all();
+    }
 
     public function allVenda()
     {
-        return $this->model->all();
+        return $this->model->orderBy('venda_data', 'desc')->paginate(5);
     }
 
 

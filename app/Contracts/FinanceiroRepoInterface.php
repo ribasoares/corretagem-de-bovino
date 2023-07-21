@@ -5,11 +5,13 @@ namespace App\Contracts;
 interface FinanceiroRepoInterface 
 {
    
-    public function allPagarConta();
+    public function allComprasPagar();
+    public function allComprasPagas();
     public function findPagarConta($id);
     public function updatePagarConta($request, $id);
 
-    public function allReceberConta();   
+    public function allVendasReceber();   
+    public function allVendasRecebidas(); 
     public function findReceberConta($id);    
     public function updateReceberConta($request, $id);
 

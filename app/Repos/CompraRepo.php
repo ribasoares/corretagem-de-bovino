@@ -28,9 +28,28 @@ class CompraRepo implements CompraRepoInterface
     }
 
     public function allCompra()
-    {
-        return $this->model->all();
+    {   
+        // Pega todas as compras e colocar elas por data em ordem ascendete.
+        return $this->model->orderBy('compra_data', 'asc')->get();
     }
+
+    public function ComprasCompletas()
+    {   
+        
+        return $this->model->orderBy('compra_data', 'desc')
+            ->where('status', '=', '0' )->paginate(5);
+
+       
+    } 
+
+    public function ComprasIncompletas()
+    {   
+        
+        return $this->model->orderBy('compra_data', 'desc')
+            ->where('status', '=', '1' )->paginate(5);
+
+       
+    } 
 
     public function allEstoque()
     {   

@@ -40,10 +40,23 @@ class FinanceiroRepo implements FinanceiroRepoInterface
     }
 
 
-    public function allPagarConta() 
-    {
-       return $this->pagarConta->all();
-    }
+    public function allComprasPagar()
+    {   
+        
+        return $this->pagarConta->orderBy('pagar_conta_data', 'desc')
+            ->where('status', '=', '1' )->paginate(5);
+
+       
+    } 
+
+    public function allComprasPagas()
+    {   
+        
+        return $this->pagarConta->orderBy('pagar_conta_data', 'desc')
+            ->where('status', '=', '0' )->paginate(5);
+
+       
+    } 
 
     public function findPagarConta($id)
     {
@@ -84,9 +97,22 @@ class FinanceiroRepo implements FinanceiroRepoInterface
     }
 
 
-    public function allReceberConta()
-    {
-        return $this->receberConta->all();
+    public function allVendasReceber()
+    {   
+        
+        return $this->receberConta->orderBy('receber_conta_data', 'desc')
+            ->where('status', '=', '1' )->paginate(5);
+
+       
+    } 
+
+    public function allVendasRecebidas()
+    {   
+        
+        return $this->receberConta->orderBy('receber_conta_data', 'desc')
+            ->where('status', '=', '0' )->paginate(5);
+
+       
     } 
 
     public function findReceberConta($id)   
@@ -127,7 +153,7 @@ class FinanceiroRepo implements FinanceiroRepoInterface
 
     public function allLucro()
     {
-        return $this->lucro->all();
+        return $this->lucro->orderBy('lucro_data', 'desc')->paginate(5);
     } 
 
     public function UpdateLucro($request, $id)

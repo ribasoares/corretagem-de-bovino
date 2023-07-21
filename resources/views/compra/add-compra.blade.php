@@ -72,7 +72,7 @@
       <div class="form-group">
         <div class="text-center py-3">
           <button class="btn btn-outline-success  col-md-3 rounded" type="submit">Cadastrar</button>&nbsp;
-          <a class="btn btn-outline-dark col-md-3 rounded" href="{{route('compra.all')}}" >Compras</a> 
+    
         </div>
       </div>     
 

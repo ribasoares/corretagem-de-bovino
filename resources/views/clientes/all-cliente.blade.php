@@ -6,7 +6,7 @@
 @section('content')
 
 
-  <div class="container border border-dark col-md-9 mt-3 bg-light opacity-75 rounded-4"> 
+  <div class="container border border-dark col-md-7 mt-3 bg-light opacity-75 rounded-4"> 
     <div class="text-center mt-2">
       <h4 >CLIENTES CADASTRADOS</h4>
     </div>
@@ -20,7 +20,7 @@
               <th scope="col">Estabelecimento</th>
               <th scope="col">CPF</th>
               <th scope="col">Telefone</th>
-              <th scope="col">Endereço</th>
+          
               <th scope="col">Editar</th>
               <th scope="col">Excluir</th>
             </tr>
@@ -31,13 +31,13 @@
             <tr>                       
               <td>{{$cliente->id}}</td>
               <td>{{$cliente->cliente_nome}}</td>                
-              <td>{{$cliente->dado_cliente->cliente_estabelecimento}} anos</td>   
+              <td>{{$cliente->dado_cliente->cliente_estabelecimento}}</td>   
               <td>{{$cliente->dado_cliente->cliente_cpf}}</td>   
               <td>{{$cliente->dado_cliente->cliente_phone}}</td> 
-              <td>{{$cliente->dado_cliente->cliente_address}}</td> 
+          
               
-              <td><a href="#">Atualizar</a></td>  
-              <td><a  href='/cliente/del/{{$cliente->id}} 'onclick="return confirm('Realmente deseja Excluir?')">Deletar</a></td> 
+              <td><a class="btn btn-primary"  href="#">Atualizar</a></td>  
+              <td><a class="btn btn-danger"  href='/cliente/del/{{$cliente->id}} 'onclick="return confirm('Realmente deseja Excluir?')">Deletar</a></td> 
             </tr>
             @endforeach                     
           </tbody>
@@ -47,6 +47,11 @@
     </div>
 
   </div>
+
+  <div class="container col-md-1 mt-2 opacity-75 rounded-4">
+    {{ $clientes->links('pagination::bootstrap-4') }}    
+  </div>
+
     
   
   

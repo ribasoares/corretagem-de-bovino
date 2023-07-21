@@ -55,7 +55,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/add-vendedor', [VendedorController::class, 'store'])->name('vendedor.store');
     Route::get('/vendedor/del/{id}', [VendedorController::class, 'destroy'])->name('vendedor.destroy');
 
-    Route::get('/all-compras', [CompraController::class, 'all'])->name('compra.all');
+    Route::get('/all-compras', [CompraController::class, 'all'])->name('compra.allCompletas');
+    Route::get('/compras-completas', [CompraController::class, 'comprasCompletas'])->name('compra.Completas');
+    Route::get('/compras-incompletas', [CompraController::class, 'comprasIncompletas'])->name('compra.Incompletas');
     Route::get('/add-compra', [CompraController::class, 'create'])->name('compra.create');
     Route::post('/add-compra', [CompraController::class, 'store'])->name('compra.store');
     Route::get('/compra/show/{id}', [CompraController::class, 'show'])->name('compra.show');
@@ -71,10 +73,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/venda/del/{id}', [VendaController::class, 'destroy'])->name('venda.destroy');
 
     Route::get('/all-Pagar-Contas', [FinanceiroController::class, 'allPagar'])->name('financeiro.allPagar');
+    Route::get('/Contas/Pagas', [FinanceiroController::class, 'allPagas'])->name('financeiro.ContasPagas');
     Route::get('/Pagar-Conta/edit/{id}', [FinanceiroController::class, 'editPagar'])->name('financeiro.editPagar');
     Route::put('/Pagar-Conta/update/{id}', [FinanceiroController::class, 'updatePagar'])->name('financeiro.updatePagar');
     
     Route::get('/all-Receber-Contas', [FinanceiroController::class, 'allReceber'])->name('financeiro.allReceber');
+    Route::get('/Contas/Recebidas', [FinanceiroController::class, 'allRecebidas'])->name('financeiro.ContasRecebidas');
     Route::get('/Receber-Conta/edit/{id}', [FinanceiroController::class, 'editReceber'])->name('financeiro.editReceber');
     Route::put('/Receber-Conta/update/{id}', [FinanceiroController::class, 'updateReceber'])->name('financeiro.updateReceber');
 

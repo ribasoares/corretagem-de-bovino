@@ -4,7 +4,7 @@ namespace App\Contracts;
 
 interface ClienteRepoInterface 
 {
-   
+    public function allClienteHome();
     public function allCliente();
     public function createCliente($request);
     public function findCliente($id);
